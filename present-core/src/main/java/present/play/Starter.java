@@ -10,6 +10,10 @@ public class Starter {
         System.out.print(mes);
     }
 
+    public Starter() {
+        System.out.print("New Starter");
+    }
+
     public void setMessageWriter(MessageWriter messageWriter) {
         this.messageWriter = messageWriter;
     }

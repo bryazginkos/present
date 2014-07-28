@@ -1,22 +1,31 @@
 package present.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
- * Created by Kos on 25.07.2014.
+ * Свойство товара
  */
 @Entity
 public class Property {
-    /*
-    id
-    item
-    title
-    public
-    parent
-    code
-    float
-    int
-    string
-    boolean
+    @Id
+    @GeneratedValue
+    private Integer id;
+
+    /**
+     * Код свойства
      */
+    public String code;
+
+    /**
+     * Название свойства
+     */
+    public String title;
+
+    /**
+     * Значение свойства
+     */
+    public String value;
+
 }

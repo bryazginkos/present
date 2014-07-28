@@ -3,6 +3,7 @@ package present.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 /**
@@ -57,6 +58,7 @@ public class Partner {
     /**
      * Товары партнера
      */
+    @OneToMany
     public List<Item> items;
 
 }
