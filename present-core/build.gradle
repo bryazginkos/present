@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework:spring-core:4.0.6.RELEASE')
+    compile('org.springframework:spring-context:4.0.6.RELEASE')
+    compile('org.springframework:spring-orm:4.0.6.RELEASE')
+
+    compile('org.hibernate:hibernate:3.5.4-Final')
+    compile('org.hibernate:hibernate-annotations:3.5.6-Final')
+    compile('org.hibernate:hibernate-commons-annotations:3.3.0.ga')
+
+    compile('mysql:mysql-connector-java:5.1.31')
+}
