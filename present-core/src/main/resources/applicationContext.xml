@@ -9,21 +9,13 @@
     http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:annotation-config/>
+    <context:component-scan base-package="present.dao.implementations"></context:component-scan>
+    <context:component-scan base-package="present.play"></context:component-scan>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <!-- Database Configuration -->
     <import resource="DataSource.xml"/>
     <import resource="Hibernate.xml"/>
 
-    <bean id="MessageWriter" class="present.play.MessageWriterImpl">
-    </bean>
-
-    <bean id="Starter" class="present.play.Starter" >
-        <property name="messageWriter" ref="MessageWriter"></property>
-    </bean>
-
-    <bean id="itemDAO" class="present.dao.implementations.ItemDaoImpl">
-
-    </bean>
     <bean id = "transactionManager" class = "org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name = "sessionFactory" ref = "sessionFactory" />
     </bean>

@@ -7,85 +7,124 @@ import java.util.Map;
  * Товары
  */
 @Entity
-@Table(name = "items")
 public class Item {
 
     @GeneratedValue
     @Id
     private int id;
 
-    /**
-     * Название товара
-     */
-    public String title;
+    private String title;
 
-    /**
-     * Описание товара
-     */
-    public String description;
+    private String description;
 
-    /**
-     * Цена товара
-     */
-    public float price;
+    private float price;
 
-    /**
-     * Партнер
-     */
+    private Category category;
+
     @ManyToOne
-    public Partner partner;
+    private Partner partner;
 
-    /**
-     * Свойства
-     */
-    @OneToMany(mappedBy = "code")
+    @OneToMany(mappedBy = "item")
+    @MapKey(name = "code")
     public Map<String, Property> properties;
 
+    /**
+     * Returns properties map for item.
+     * @return
+     */
     public Map<String, Property> getProperties() {
         return properties;
     }
 
+    /**
+     * Sets properties map for item.
+     * @return
+     */
     public void setProperties(Map<String, Property> properties) {
         this.properties = properties;
     }
 
+    /**
+     * Returns partner (item seller)
+     * @return
+     */
     public Partner getPartner() {
         return partner;
     }
 
+    /**
+     * Sets partner (item seller)
+     * @param partner
+     */
     public void setPartner(Partner partner) {
         this.partner = partner;
     }
 
+    /**
+     * Returns item category
+     * @return
+     */
+    public Category getCategory() {
+        return category;
+    }
+
+    /**
+     * Sets item category
+     * @return
+     */
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    /**
+     * Returns item's price
+     * @return
+     */
     public float getPrice() {
         return price;
     }
 
+    /**
+     * Sets item's price
+     * @return
+     */
     public void setPrice(float price) {
         this.price = price;
     }
 
+    /**
+     * Returns item's description
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Sets item's description
+     * @return
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     * Returns item's title
+     * @return
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * Sets item's title
+     * @return
+     */
     public void setTitle(String title) {
         this.title = title;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

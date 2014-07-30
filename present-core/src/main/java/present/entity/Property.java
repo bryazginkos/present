@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Свойство товара
+ * Property
  */
 @Entity
 public class Property {
@@ -13,19 +13,47 @@ public class Property {
     @GeneratedValue
     private Integer id;
 
-    /**
-     * Код свойства
-     */
-    public String code;
+    private String code;
+
+    private String value;
+
+    public Integer getId() {
+        return id;
+    }
 
     /**
-     * Название свойства
+     * Returns property code
+     * like "isSafeForChildren" of "weight"
+     * @return
      */
-    public String title;
+    public String getCode() {
+        return code;
+    }
 
     /**
-     * Значение свойства
+     * Sets property code
+     * like "isSafeForChildren" of "weight"
+     * @return
      */
-    public String value;
+    public void setCode(String code) {
+        this.code = code;
+    }
 
+    /**
+     * Returns property value
+     * like "yes" of "12"
+     * @return
+     */
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     * Sets property value
+     * like "yes" of "12"
+     * @return
+     */
+    public void setValue(String value) {
+        this.value = value;
+    }
 }

@@ -3,8 +3,7 @@ package present.dao.interfaces;
 import present.entity.Item;
 
 /**
- * Created by Kos on 28.07.2014.
+ * DAO for Item Object
  */
-public interface ItemDAO {
-    public void save(Item item);
+public interface ItemDAO extends CommonDAO<Item> {
 }

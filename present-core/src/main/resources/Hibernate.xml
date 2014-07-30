@@ -25,7 +25,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
         <property name="annotatedClasses">
             <list>
                 <value>present.entity.Item</value>
-                <value>present.entity.ClientInfo</value>
+                <value>present.entity.RecipientInfo</value>
                 <value>present.entity.Partner</value>
                 <value>present.entity.Property</value>
             </list>
