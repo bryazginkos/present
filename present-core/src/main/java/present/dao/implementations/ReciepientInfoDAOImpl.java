@@ -1,11 +1,10 @@
 package present.dao.implementations;
 
+import org.springframework.stereotype.Repository;
 import present.dao.interfaces.RecipientInfoDAO;
 import present.entity.RecipientInfo;
 
-/**
- * Created by Kos on 30.07.2014.
- */
+@Repository
 public class ReciepientInfoDAOImpl extends CustomHibernateDaoSupport implements RecipientInfoDAO {
     @Override
     public void save(RecipientInfo recipientInfo) {

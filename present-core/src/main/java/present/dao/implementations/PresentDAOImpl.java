@@ -1,11 +1,10 @@
 package present.dao.implementations;
 
+import org.springframework.stereotype.Repository;
 import present.dao.interfaces.PresentDAO;
 import present.entity.Present;
 
-/**
- * Created by Kos on 30.07.2014.
- */
+@Repository
 public class PresentDAOImpl extends CustomHibernateDaoSupport implements PresentDAO {
     @Override
     public void save(Present present) {

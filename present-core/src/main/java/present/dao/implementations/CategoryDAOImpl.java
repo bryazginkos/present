@@ -1,11 +1,10 @@
 package present.dao.implementations;
 
+import org.springframework.stereotype.Repository;
 import present.dao.interfaces.CategoryDAO;
 import present.entity.Category;
 
-/**
- * Created by Kos on 30.07.2014.
- */
+@Repository
 public class CategoryDAOImpl extends CustomHibernateDaoSupport implements CategoryDAO {
     @Override
     public void save(Category category) {

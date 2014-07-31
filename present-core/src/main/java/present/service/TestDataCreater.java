@@ -1,22 +1,21 @@
 package present.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import present.dao.implementations.ItemDaoImpl;
+import org.springframework.stereotype.Service;
 import present.dao.interfaces.*;
 import present.entity.*;
-
 import javax.transaction.Transactional;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Kos on 30.07.2014.
- */
+@Service
 public class TestDataCreater {
+
+    @Autowired
+    private ItemDAO itemDAO;
 
     @Transactional
     public void createData() {
-        ItemDAO itemDAO = new ItemDaoImpl();
         Category categoryChild = new Category();
         Category categoryRoot = new Category();
 
@@ -24,7 +23,7 @@ public class TestDataCreater {
         categoryRoot.setDescription("Root categody (description)");
         categoryChild.setTitle("Child category");
         categoryChild.setDescription("Child category (description)");
-        categoryChild.setParent(categoryRoot);
+//        categoryChild.setParent(categoryRoot);
 
         for (int partnerNum = 1; partnerNum <= 3; partnerNum++) {
             Partner partner = createPartner(partnerNum);
@@ -48,7 +47,7 @@ public class TestDataCreater {
         partner.setMd5pass("md5string(partner#"+ partnerNum +")");
         partner.setPhone("+7" + partnerNum);
         partner.setUrl("www.partner-"+ partnerNum +".com");
-        partner.setProperties(createPartnerPropertis(partnerNum));
+//      partner.setProperties(createPartnerPropertis(partnerNum));
         partner.setRecipientInfoMap(createReciepintInfoMap(partnerNum));
         return partner;
     }
@@ -127,7 +126,7 @@ public class TestDataCreater {
         Item item = new Item();
         item.setTitle("Item #" + itemNum);
         item.setDescription("Item #" + itemNum + "of partner#" + partnerNum );
-        item.setCategory(category);
+      //item.setCategory(category);
         item.setPrice(10*itemNum);
         item.setProperties(createItemPropertis(itemNum));
         return item;

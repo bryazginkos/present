@@ -1,12 +1,11 @@
 package present.dao.implementations;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
 import present.dao.interfaces.PartnerDAO;
 import present.entity.Partner;
 
-/**
- * Created by Kos on 29.07.2014.
- */
+@Repository
 public class PartnerDAOImpl extends HibernateDaoSupport implements PartnerDAO{
     @Override
     public void save(Partner partner) {

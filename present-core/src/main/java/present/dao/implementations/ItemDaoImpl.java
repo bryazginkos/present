@@ -1,8 +1,10 @@
 package present.dao.implementations;
 
+import org.springframework.stereotype.Repository;
 import present.dao.interfaces.ItemDAO;
 import present.entity.Item;
 
+@Repository
 public class ItemDaoImpl extends CustomHibernateDaoSupport implements ItemDAO {
     @Override
     public void save(Item item) {

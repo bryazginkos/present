@@ -1,6 +1,7 @@
 package present.entity;
 
 import javax.persistence.*;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,36 +30,36 @@ public class Partner {
 
     private String email;
 
-    @OneToMany(mappedBy = "partner")
+    @OneToMany
     @MapKey(name = "code")
-    private Map<String, RecipientInfo> recipientInfoMap;
+    private Map<String, RecipientInfo> recipientInfoMap = new HashMap<String, RecipientInfo>(0);
 
     @OneToMany
     private List<Item> items;
 
-    @OneToMany(mappedBy = "partner")
+  /*  @OneToMany
     @MapKey(name = "code")
-    private Map<String, Property> properties;
-
+    private Map<String, Property> properties = new HashMap<String, Property>(0);;
+*/
     public Integer getId() {
         return id;
     }
 
-    /**
-     * Returns properties map for partner
-     * @return
-     */
-    public Map<String, Property> getProperties() {
-        return properties;
-    }
-
-    /**
-     * Sets properties map for partner
-     * @return
-     */
-    public void setProperties(Map<String, Property> properties) {
-        this.properties = properties;
-    }
+//    /**
+//     * Returns properties map for partner
+//     * @return
+//     */
+//    public Map<String, Property> getProperties() {
+//        return properties;
+//    }
+//
+//    /**
+//     * Sets properties map for partner
+//     * @return
+//     */
+//    public void setProperties(Map<String, Property> properties) {
+//        this.properties = properties;
+//    }
 
     /**
      * Return items list of partner
