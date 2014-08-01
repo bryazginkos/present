@@ -30,36 +30,36 @@ public class Partner {
 
     private String email;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @MapKey(name = "code")
     private Map<String, RecipientInfo> recipientInfoMap = new HashMap<String, RecipientInfo>(0);
 
     @OneToMany
     private List<Item> items;
 
-  /*  @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @MapKey(name = "code")
     private Map<String, Property> properties = new HashMap<String, Property>(0);;
-*/
+
     public Integer getId() {
         return id;
     }
 
-//    /**
-//     * Returns properties map for partner
-//     * @return
-//     */
-//    public Map<String, Property> getProperties() {
-//        return properties;
-//    }
-//
-//    /**
-//     * Sets properties map for partner
-//     * @return
-//     */
-//    public void setProperties(Map<String, Property> properties) {
-//        this.properties = properties;
-//    }
+    /**
+     * Returns properties map for partner
+     * @return
+     */
+    public Map<String, Property> getProperties() {
+        return properties;
+    }
+
+    /**
+     * Sets properties map for partner
+     * @return
+     */
+    public void setProperties(Map<String, Property> properties) {
+        this.properties = properties;
+    }
 
     /**
      * Return items list of partner

@@ -28,6 +28,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
                 <value>present.entity.RecipientInfo</value>
                 <value>present.entity.Partner</value>
                 <value>present.entity.Property</value>
+                <value>present.entity.Category</value>
             </list>
         </property>
     </bean>

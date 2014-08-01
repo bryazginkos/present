@@ -20,12 +20,12 @@ public class Item {
 
     private float price;
 
-  //  private Category category;
+    private Category category;
 
     @ManyToOne
     private Partner partner;
 
-    @OneToMany
+    @OneToMany (cascade = CascadeType.ALL)
     @MapKey(name = "code")
     public Map<String, Property> properties = new HashMap<String, Property>(0);
 
@@ -61,21 +61,21 @@ public class Item {
         this.partner = partner;
     }
 
-//    /**
-//     * Returns item category
-//     * @return
-//     */
-//    public Category getCategory() {
-//        return category;
-//    }
-//
-//    /**
-//     * Sets item category
-//     * @return
-//     */
-//    public void setCategory(Category category) {
-//        this.category = category;
-//    }
+    /**
+     * Returns item category
+     * @return
+     */
+    public Category getCategory() {
+        return category;
+    }
+
+    /**
+     * Sets item category
+     * @return
+     */
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     /**
      * Returns item's price

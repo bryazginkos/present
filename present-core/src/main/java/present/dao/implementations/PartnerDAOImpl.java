@@ -6,7 +6,7 @@ import present.dao.interfaces.PartnerDAO;
 import present.entity.Partner;
 
 @Repository
-public class PartnerDAOImpl extends HibernateDaoSupport implements PartnerDAO{
+public class PartnerDAOImpl extends CustomHibernateDaoSupport implements PartnerDAO{
     @Override
     public void save(Partner partner) {
         getHibernateTemplate().save(partner);

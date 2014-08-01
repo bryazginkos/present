@@ -14,6 +14,15 @@ public class TestDataCreater {
     @Autowired
     private ItemDAO itemDAO;
 
+    @Autowired
+    private PartnerDAO partnerDAO;
+
+    @Autowired
+    private PropertyDAO propertyDAO;
+
+    @Autowired
+    private CategoryDAO categoryDAO;
+
     @Transactional
     public void createData() {
         Category categoryChild = new Category();
@@ -23,7 +32,10 @@ public class TestDataCreater {
         categoryRoot.setDescription("Root categody (description)");
         categoryChild.setTitle("Child category");
         categoryChild.setDescription("Child category (description)");
-//        categoryChild.setParent(categoryRoot);
+    //  categoryChild.setParent(categoryRoot);
+
+        categoryDAO.save(categoryRoot);
+        categoryDAO.save(categoryChild);
 
         for (int partnerNum = 1; partnerNum <= 3; partnerNum++) {
             Partner partner = createPartner(partnerNum);
@@ -33,7 +45,7 @@ public class TestDataCreater {
                 item.setPartner(partner);
                 itemDAO.save(item);
             }
-
+            partnerDAO.save(partner);
         }
     }
 
@@ -47,7 +59,7 @@ public class TestDataCreater {
         partner.setMd5pass("md5string(partner#"+ partnerNum +")");
         partner.setPhone("+7" + partnerNum);
         partner.setUrl("www.partner-"+ partnerNum +".com");
-//      partner.setProperties(createPartnerPropertis(partnerNum));
+        partner.setProperties(createPartnerPropertis(partnerNum));
         partner.setRecipientInfoMap(createReciepintInfoMap(partnerNum));
         return partner;
     }
@@ -126,7 +138,7 @@ public class TestDataCreater {
         Item item = new Item();
         item.setTitle("Item #" + itemNum);
         item.setDescription("Item #" + itemNum + "of partner#" + partnerNum );
-      //item.setCategory(category);
+        item.setCategory(category);
         item.setPrice(10*itemNum);
         item.setProperties(createItemPropertis(itemNum));
         return item;
