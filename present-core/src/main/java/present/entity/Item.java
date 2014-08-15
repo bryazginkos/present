@@ -20,6 +20,7 @@ public class Item {
 
     private float price;
 
+    @OneToOne
     private Category category;
 
     @ManyToOne

@@ -4,7 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import present.dao.interfaces.*;
 import present.entity.*;
+import sun.plugin.javascript.navig.Array;
+
 import javax.transaction.Transactional;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +35,8 @@ public class TestDataCreater {
         categoryRoot.setDescription("Root categody (description)");
         categoryChild.setTitle("Child category");
         categoryChild.setDescription("Child category (description)");
-    //  categoryChild.setParent(categoryRoot);
+        categoryChild.setParent(categoryRoot);
+        categoryRoot.setChildren(Arrays.asList(categoryChild));
 
         categoryDAO.save(categoryRoot);
         categoryDAO.save(categoryChild);

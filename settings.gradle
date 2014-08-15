@@ -1,3 +1,5 @@
 rootProject.name = 'present'
 include 'present-core'
 
+include 'present-partner'
+

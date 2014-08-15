@@ -1,0 +1,17 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:m='urn:import:present.client.ui.panels'>
+        <g:HTMLPanel>
+            <table>
+                <tr>
+                    <td>
+                        <m:ItemsEditPanel ui:field="itemsEditPanel"/>
+                    </td>
+                    <td>
+                        <m:GridPanel ui:field="gridPanel"></m:GridPanel>
+                    </td>
+                </tr>
+            </table>
+
+        </g:HTMLPanel>
+</ui:UiBinder>

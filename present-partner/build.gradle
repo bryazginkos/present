@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+version = '0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.google.gwt:gwt-user:2.6.1"
+    compile "com.google.gwt:gwt-dev:2.6.1"
+    compile "com.google.gwt:gwt-servlet:2.6.1"
+}

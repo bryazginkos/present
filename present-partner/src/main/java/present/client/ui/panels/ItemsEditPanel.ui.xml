@@ -1,0 +1,18 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:HTMLPanel>
+        <table class="myTable">
+            <tr><td>
+                <g:Button ui:field="createBtn" text="Создать"/>
+            </td></tr>
+
+            <tr><td>
+                <g:Button ui:field="changeBtn" text="Редактировать"/>
+            </td></tr>
+
+            <tr><td>
+                <g:Button ui:field="deleteBtn" text="Удалить"/>
+            </td></tr>
+        </table>
+    </g:HTMLPanel>
+</ui:UiBinder>
