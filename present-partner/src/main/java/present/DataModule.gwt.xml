@@ -3,6 +3,7 @@
 <module>
 
     <inherits name='com.google.gwt.user.User'/>
+    <inherits name="com.google.gwt.cell.Cell"></inherits>
 
     <entry-point class='present.client.DataModule'/>
     <servlet path="/dataService" class="present.server.dataServiceImpl"/>

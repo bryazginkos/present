@@ -1,17 +1,52 @@
 package present.client.ui.widgets;
 
-import com.google.gwt.user.client.ui.Grid;
-import com.google.gwt.user.client.ui.Label;
+
+import com.google.gwt.user.cellview.client.CellTable;
+import com.google.gwt.user.cellview.client.TextColumn;
+import present.client.dto.Item;
 
 /**
  * Created by Kos on 15.08.2014.
  */
-public class ItemsGrid extends Grid {
+public class ItemsGrid extends CellTable<Item> {
     public ItemsGrid() {
-        super(1,4);
-        setText(0,0,"ID");
-        setText(0,1, "Наименование");
-        setText(0,2, "Цена");
-        setText(0,3, "Резервирован");
+        addColumns();
+    }
+
+    private void addColumns(){
+        TextColumn<Item> id = new TextColumn<Item>() {
+            @Override
+            public String getValue(Item object) {
+                return String.valueOf(object.getId());
+            }
+        };
+        addColumn(id, "Id");
+
+        TextColumn<Item> title = new TextColumn<Item>() {
+            @Override
+            public String getValue(Item object) {
+                return object.getTitle();
+            }
+        };
+        addColumn(title, "Наименование");
+
+        TextColumn<Item> category = new TextColumn<Item>() {
+            @Override
+            public String getValue(Item object) {
+                return object.getCategory().getTitle();
+            }
+        };
+        addColumn(category, "Категория");
+
+
+        TextColumn<Item> price = new TextColumn<Item>() {
+            @Override
+            public String getValue(Item object) {
+                return String.valueOf(object.getPrice());
+            }
+        };
+        addColumn(price, "Цена");
+
+
     }
 }

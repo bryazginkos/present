@@ -7,7 +7,11 @@ repositories {
 }
 
 dependencies {
+    compile project (":present-core")
     compile "com.google.gwt:gwt-user:2.6.1"
     compile "com.google.gwt:gwt-dev:2.6.1"
     compile "com.google.gwt:gwt-servlet:2.6.1"
+
+    testCompile "junit:junit:4.4"
 }
+

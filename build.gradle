@@ -7,5 +7,12 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+task createDTO(type: Copy) {
+    from 'present-core/src/main/java/present/entity'
+    into 'present-partner/src/main/java/present/client/dto'
+    filter {
+        String line -> line.replaceAll("present.entity","present.client.dto")
+    }
 }

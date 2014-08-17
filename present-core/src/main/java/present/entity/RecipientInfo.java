@@ -3,12 +3,13 @@ package present.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Description of necessary information about recipient for partner
  */
 @Entity
-public class RecipientInfo {
+public class RecipientInfo implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
@@ -56,5 +57,9 @@ public class RecipientInfo {
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

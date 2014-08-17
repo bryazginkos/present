@@ -22,6 +22,8 @@
 
     <bean id ="TestDataCreater" class="present.service.TestDataCreater">
 
+
     </bean>
+    <bean id = "StaticService" class="present.service.implementations.StaticServiceImpl"></bean>
 
 </beans>

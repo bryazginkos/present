@@ -1,6 +1,7 @@
 package present.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +10,7 @@ import java.util.Map;
  * Created by Kos on 25.07.2014.
  */
 @Entity
-public class Partner {
+public class Partner implements Serializable {
     @GeneratedValue
     @Id
     private Integer id;
@@ -43,6 +44,10 @@ public class Partner {
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     /**
@@ -215,4 +220,6 @@ public class Partner {
     public void setRecipientInfoMap(Map<String, RecipientInfo> recipientInfoMap) {
         this.recipientInfoMap = recipientInfoMap;
     }
+
+
 }

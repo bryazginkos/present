@@ -19,4 +19,6 @@ dependencies {
     compile('org.slf4j:slf4j-log4j12:1.7.7')
 
     compile('mysql:mysql-connector-java:5.1.31')
+
+    compile "com.google.gwt:gwt-user:2.6.1"
 }

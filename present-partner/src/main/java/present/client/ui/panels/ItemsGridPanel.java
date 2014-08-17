@@ -10,8 +10,8 @@ import present.client.ui.widgets.ItemsGrid;
 /**
  * Created by Kos on 15.08.2014.
  */
-public class GridPanel extends Composite {
-    interface GridPanelUiBinder extends UiBinder<Widget, GridPanel> {
+public class ItemsGridPanel extends Composite {
+    interface GridPanelUiBinder extends UiBinder<Widget, ItemsGridPanel> {
     }
 
     private static GridPanelUiBinder ourUiBinder = GWT.create(GridPanelUiBinder.class);
@@ -19,7 +19,7 @@ public class GridPanel extends Composite {
     @UiField
     ItemsGrid itemsGrid;
 
-    public GridPanel() {
+    public ItemsGridPanel() {
         Widget rootElement = ourUiBinder.createAndBindUi(this);
         initWidget(itemsGrid);
     }

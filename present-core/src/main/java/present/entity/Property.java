@@ -3,12 +3,13 @@ package present.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Property
  */
 @Entity
-public class Property {
+public class Property implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
@@ -19,6 +20,10 @@ public class Property {
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     /**

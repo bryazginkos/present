@@ -5,24 +5,21 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
+import present.client.ui.widgets.CategoryTreeTable;
 
 /**
- * Created by Kos on 15.08.2014.
+ * Created by Kos on 17.08.2014.
  */
-public class MainPanel extends Composite {
-    interface MainPanelUiBinder extends UiBinder<Widget, MainPanel> {
+public class FilterPanel extends Composite {
+    interface FilterPanelUiBinder extends UiBinder<Widget, FilterPanel> {
     }
 
-    private static MainPanelUiBinder ourUiBinder = GWT.create(MainPanelUiBinder.class);
+    private static FilterPanelUiBinder ourUiBinder = GWT.create(FilterPanelUiBinder.class);
 
     @UiField
-    ItemsEditPanel itemsEditPanel;
-    @UiField
-    ItemsGridPanel gridPanel;
-    @UiField
-    PropertiesGridPanel propertiesGridPanel;
+    CategoryTreeTable categoryTreeTable;
 
-    public MainPanel() {
+    public FilterPanel() {
         Widget rootElement = ourUiBinder.createAndBindUi(this);
         initWidget(rootElement);
     }

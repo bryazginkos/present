@@ -1,6 +1,7 @@
 package present.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,7 +9,7 @@ import java.util.Map;
  * Товары
  */
 @Entity
-public class Item {
+public class Item implements Serializable {
 
     @GeneratedValue
     @Id
@@ -128,5 +129,9 @@ public class Item {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

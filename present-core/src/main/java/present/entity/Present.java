@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ import java.util.Map;
  * Подарок
  */
 @Entity
-public class Present {
+public class Present implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
@@ -73,6 +74,10 @@ public class Present {
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     /**

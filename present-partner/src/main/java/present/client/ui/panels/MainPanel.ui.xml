@@ -7,9 +7,18 @@
                     <td>
                         <m:ItemsEditPanel ui:field="itemsEditPanel"/>
                     </td>
-                    <td>
-                        <m:GridPanel ui:field="gridPanel"></m:GridPanel>
+                    <td rowspan="2">
+                        <m:ItemsGridPanel ui:field="gridPanel"></m:ItemsGridPanel>
                     </td>
+                    <td>
+                        <m:PropertiesGridPanel ui:field="propertiesGridPanel"></m:PropertiesGridPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <m:FilterPanel></m:FilterPanel>
+                    </td>
+                    <td></td>
                 </tr>
             </table>
 
