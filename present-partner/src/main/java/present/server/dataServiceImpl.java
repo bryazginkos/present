@@ -5,8 +5,6 @@ import present.client.DataService;
 import present.client.dto.Category;
 import present.server.util.DTOConverter;
 import present.service.ServiceFactory;
-import present.service.implementations.StaticServiceImpl;
-import present.service.interfaces.StaticService;
 
 /**
  * Created by Kos on 15.08.2014.

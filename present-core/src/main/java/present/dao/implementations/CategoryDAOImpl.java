@@ -2,11 +2,11 @@ package present.dao.implementations;
 
 import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
-import org.hibernate.Hibernate;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import present.dao.interfaces.CategoryDAO;
 import present.entity.Category;
+import java.util.List;
 
 @Repository
 public class CategoryDAOImpl extends CustomHibernateDaoSupport implements CategoryDAO {
@@ -28,8 +28,14 @@ public class CategoryDAOImpl extends CustomHibernateDaoSupport implements Catego
     @Override
     public Category getRootCategory() {
         Criteria criteria = getHibernateTemplate().getSessionFactory().getCurrentSession().createCriteria(Category.class);
-        criteria.add(Restrictions.isNull("parent"));
         criteria.setFetchMode("parent", FetchMode.JOIN);
-        return (Category)criteria.list().get(0);
+        criteria.setFetchMode("children", FetchMode.JOIN);
+        List<Category> categories = criteria.list();
+        for (Category category : categories) {
+            if (category.getParent() == null) {
+                return category;
+            }
+        }
+        return null;
     }
 }

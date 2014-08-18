@@ -19,7 +19,6 @@ public class CategoryTreeTable extends Tree {
             @Override
             public void onFailure(Throwable caught) {
                 Window.alert("Ошибка");
-
             }
 
             @Override
@@ -29,32 +28,35 @@ public class CategoryTreeTable extends Tree {
         });
     }
 
-    class CategoryItem extends TreeItem {
-        public int categoryId;
-    }
-
     public void fillTree(Category rootCategory) {
         clear();
         fillBranch(rootCategory, null);
 
     }
 
-    private void fillBranch(Category currentCategory, CategoryItem parentItem) {
-        CategoryItem currentItem;
+    private void fillBranch(Category currentCategory, TreeItem parentItem) {
+        TreeItem currentItem;
         if (parentItem == null) {
-            currentItem = (CategoryItem)addItem(new Label(currentCategory.getTitle()));
-            currentItem.categoryId = currentCategory.getId();
+            currentItem = addItem(new ItemLabel(currentCategory.getTitle(), currentCategory.getId()));
             for (Category nextCurrentCategory : currentCategory.getChildren()) {
                 fillBranch(nextCurrentCategory, currentItem);
             }
         }
         else {
-            currentItem = (CategoryItem)parentItem.addItem(new Label(currentCategory.getTitle()));
-            currentItem.categoryId = currentCategory.getId();
+            currentItem = parentItem.addItem(new ItemLabel(currentCategory.getTitle(), currentCategory.getId()));
             for (Category nextRootCategory : currentCategory.getChildren()) {
                 fillBranch(nextRootCategory, currentItem);
             }
 
+        }
+    }
+
+    class ItemLabel extends Label {
+        public int categoryId;
+
+        ItemLabel(String text, int categoryId) {
+            super(text);
+            this.categoryId = categoryId;
         }
     }
 

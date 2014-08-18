@@ -38,7 +38,6 @@ public class DTOConverter {
         dtoCategory.setParent(parent);
         int numberChildren = category.getChildren() == null ? 0 :category.getChildren().size();
         if (numberChildren != 0) {
-            dtoCategory.setChildren(new ArrayList<Category>());
             dtoCategory.setChildren(new ArrayList<Category>(numberChildren));
             for (present.entity.Category child : category.getChildren()) {
                 dtoCategory.getChildren().add(toCategoryDto(child, dtoCategory));
