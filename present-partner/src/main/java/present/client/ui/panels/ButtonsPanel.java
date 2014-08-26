@@ -10,17 +10,15 @@ import com.google.gwt.user.client.ui.Widget;
 /**
  * Created by Kos on 15.08.2014.
  */
-public class ItemsEditPanel extends Composite {
-    interface ItemsEditPanelUiBinder extends UiBinder<Widget, ItemsEditPanel> {
+public class ButtonsPanel extends Composite {
+    interface ButtonsPanelUiBinder extends UiBinder<Widget, ButtonsPanel> {
     }
 
-    private static ItemsEditPanelUiBinder ourUiBinder = GWT.create(ItemsEditPanelUiBinder.class);
+    private static ButtonsPanelUiBinder ourUiBinder = GWT.create(ButtonsPanelUiBinder.class);
 
     @UiField Button createBtn;
-    @UiField Button changeBtn;
-    @UiField Button deleteBtn;
 
-    public ItemsEditPanel() {
+    public ButtonsPanel() {
         Widget rootElement = ourUiBinder.createAndBindUi(this);
         initWidget(rootElement);
     }

@@ -6,6 +6,78 @@ body {
     margin: 8px;
 }
 
-.myTable {
-    text-align: center;
+.bloginfo {
+    background: #F0E6FA;
+    border: 1px solid #c0c0c0;
+    text-align: justify;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 5px #ABC;/*Google Crome � Safari */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#AABBCC,direction=125,strength=5)";/*Internet   Explorer */
+    box-shadow: 5px 5px 5px #ABC;/*Opera � Firefox*/
+    width: 100%;
+    height: 100%;
+}
+.bloginfo-head {
+    font-size:18px;
+    font-weight: bold;
+    color:#ed802b;
+    margin: 0 0 10px 10px;
+}
+.bloginfo-txt {
+    line-height: 1.4em;
+    color:#0d7bb8;
+    font-size:15px;
+}
+
+.partnerPanel {
+    width: 250px;
+    height: 180px;
+
+}
+
+.categoryPanel {
+    width: 250px;
+    height: 650px;
+
+}
+.categoryLabel {
+    cursor: pointer;
+}
+
+.categoryLabelSelected {
+    cursor: pointer;
+    font-weight: bold;
+    color:#163830;
+}
+
+.partnerPropertyPanel{
+    max-width: 100%;
+    min-width: 750px;
+    height: 180px;
+}
+
+.itemPanel {
+    width: 250px;
+    height: 650px;
+}
+
+.gridPanel {
+    max-width: 100%;
+    min-width: 500px;
+    height: 650px;
+}
+.buttonsPanel {
+    max-width: 100%;
+    height: 45px;
+}
+
+.buttonsPanelTable {
+    margin: auto;
+}
+td {
+    padding: 5px;
 }

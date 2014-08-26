@@ -10,16 +10,16 @@ import present.client.ui.widgets.PropertiesGrid;
 /**
  * Created by Kos on 17.08.2014.
  */
-public class PropertiesGridPanel extends Composite {
-    interface PropertiesGridPanelUiBinder extends UiBinder<Widget, PropertiesGridPanel> {
+public class ItemPanel extends Composite {
+    interface ItemPanelUiBinder extends UiBinder<Widget, ItemPanel> {
     }
 
-    private static PropertiesGridPanelUiBinder ourUiBinder = GWT.create(PropertiesGridPanelUiBinder.class);
+    private static ItemPanelUiBinder ourUiBinder = GWT.create(ItemPanelUiBinder.class);
 
     @UiField
     PropertiesGrid propertiesGrid;
 
-    public PropertiesGridPanel() {
+    public ItemPanel() {
         Widget rootElement = ourUiBinder.createAndBindUi(this);
         initWidget(rootElement);
     }

@@ -2,7 +2,6 @@ package present.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.*;
-import present.client.ui.panels.ItemsEditPanel;
 import present.client.ui.panels.MainPanel;
 
 /**

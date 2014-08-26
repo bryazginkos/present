@@ -10,16 +10,16 @@ import present.client.ui.widgets.CategoryTreeTable;
 /**
  * Created by Kos on 17.08.2014.
  */
-public class FilterPanel extends Composite {
-    interface FilterPanelUiBinder extends UiBinder<Widget, FilterPanel> {
+public class CategoryPanel extends Composite {
+    interface CategoryPanelUiBinder extends UiBinder<Widget, CategoryPanel> {
     }
 
-    private static FilterPanelUiBinder ourUiBinder = GWT.create(FilterPanelUiBinder.class);
+    private static CategoryPanelUiBinder ourUiBinder = GWT.create(CategoryPanelUiBinder.class);
 
     @UiField
     CategoryTreeTable categoryTreeTable;
 
-    public FilterPanel() {
+    public CategoryPanel() {
         Widget rootElement = ourUiBinder.createAndBindUi(this);
         initWidget(rootElement);
     }

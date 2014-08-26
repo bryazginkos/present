@@ -1,26 +1,61 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'
              xmlns:m='urn:import:present.client.ui.panels'>
-        <g:HTMLPanel>
-            <table>
+    <g:HTMLPanel>
+        <div style="width: 95%; margin: auto">
+            <table style="width: 100%">
                 <tr>
-                    <td>
-                        <m:ItemsEditPanel ui:field="itemsEditPanel"/>
+                    <td class="partnerPanel">
+                        <div class="bloginfo partnerPanel" style="text-align: left;">
+                            <div class="bloginfo-head">Иформация</div>
+                            <div class="bloginfo-txt">
+                            </div>
+                        </div>
                     </td>
-                    <td rowspan="2">
-                        <m:ItemsGridPanel ui:field="gridPanel"></m:ItemsGridPanel>
-                    </td>
-                    <td>
-                        <m:PropertiesGridPanel ui:field="propertiesGridPanel"></m:PropertiesGridPanel>
+                    <td class="partnerPropertyPanel" colspan="2">
+                        <div class="bloginfo partnerPropertyPanel" style="text-align: left;">
+                            <div class="bloginfo-head">Параметры</div>
+                            <div class="bloginfo-txt">
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <m:FilterPanel></m:FilterPanel>
+                    <td class="categoryPanel">
+                        <div class="bloginfo categoryPanel" style="text-align: left;">
+                            <div class="bloginfo-head">Категории</div>
+                            <div class="bloginfo-txt">
+                                <m:CategoryPanel ui:field="categoryPanel"></m:CategoryPanel>
+                            </div>
+                        </div>
                     </td>
-                    <td></td>
+                    <td class="gridPanel">
+                        <div class="bloginfo gridPanel" style="text-align: left;">
+                            <div class="bloginfo-head">Таблица товаров/услуг</div>
+                            <div class="bloginfo-txt">
+                                <m:ItemsGridPanel ui:field="itemsGridPanel"></m:ItemsGridPanel>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="itemPanel">
+                        <div class="bloginfo itemPanel" style="text-align: left;">
+                            <div class="bloginfo-head">Товар/Услуга</div>
+                            <div class="bloginfo-txt">
+                                <m:ItemPanel ui:field="itemPanel"></m:ItemPanel>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="buttonsPanel" colspan="3">
+                        <div class="bloginfo buttonsPanel" style="text-align: left;">
+                            <div class="bloginfo-txt">
+                                <m:ButtonsPanel ui:field="buttonsPanel"></m:ButtonsPanel>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             </table>
-
-        </g:HTMLPanel>
+        </div>
+    </g:HTMLPanel>
 </ui:UiBinder>

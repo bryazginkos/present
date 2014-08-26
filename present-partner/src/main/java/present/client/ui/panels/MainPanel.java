@@ -16,11 +16,16 @@ public class MainPanel extends Composite {
     private static MainPanelUiBinder ourUiBinder = GWT.create(MainPanelUiBinder.class);
 
     @UiField
-    ItemsEditPanel itemsEditPanel;
+    CategoryPanel categoryPanel;
+
     @UiField
-    ItemsGridPanel gridPanel;
+    ItemsGridPanel itemsGridPanel;
+
     @UiField
-    PropertiesGridPanel propertiesGridPanel;
+    ItemPanel itemPanel;
+
+    @UiField
+    ButtonsPanel buttonsPanel;
 
     public MainPanel() {
         Widget rootElement = ourUiBinder.createAndBindUi(this);
